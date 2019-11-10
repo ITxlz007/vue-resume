@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr =[1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN];
+		console.log(arr.length)
+		
+		//第一种方式
+		var arr1 = Array.from(new Set(arr))
+		console.log(arr1,arr1.length)
+		// 第二种方式
+		var arr2 = [...new Set(arr)]
+
+		console.log(arr2)
+
+		// 第三种方式
+		var arr3 = [arr[0]]
+		var arr = arr.sort();
+		for(var i=1 ;i<arr.length;i++){
+			if(arr[i]!==arr[i-1]){
+				arr3.push(arr[i])
+			}
+		}
+		console.log(arr3)
+		// 第四种方式
+		
+		var array = []
+		for(var i= 0;i<arr.length;i++){
+			if(!array.includes(arr[i])){
+				array.push(arr[i])
+			}
+		}
+		console.log(array)
+		// 第五种方式
+		
+		var arr4 = new Array
+
+		for(var i=0;i<arr.length;i++){
+			if(arr4.indexOf(arr[i])==-1){
+				arr4.push(arr[i])
+			}
+		}
+		console.log(arr4)
+	</script>
+</body>
+</html>

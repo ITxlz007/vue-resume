@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box"></div>
+		<ul>
+			<li>我是第一个li</li>
+			<li>我是第2个li</li>
+			<li>我是第3个li</li>
+		</ul>
+	</body>
+	<script  src="js/jquery-1.12.4.js">
+		// $('.box').css({
+		// 	height:100,
+		// 	width:100,
+		// 	border: 1px solid #ccc
+		// })
+	</script>
+	<script>
+	// $('div').css('width',500);
+	// 数字可以不加引号，其余的形式必须都得加引号
+	$('.box').css({
+			height:100,
+			width:100,
+			border:' 1px solid #ccc',
+			background:'pink'
+		})
+		$('.box').text('hello')
+		// $('ul').append($('<li>我是第二个li</li>'))
+		// $('<li>我是第三个li</li>').appendTo($('ul'))
+		// $('ul > li:nth-of-type(3)').remove()
+		// $('li:eq(2)').empty()//empty只会请清除标签内的内容
+		// $('li').eq(1).remove()//默认索引是从0开始
+
+		// jQuery.fn.swStr = function (arr) {
+		// 	JSON.stringify(arr)
+		// }
+		// var arr =['ahf','asdf','asd','123']
+
+		// console.log($.swStr(arr))
+		
+		// var str = 'dfsa'
+		// str.includes
+			var str ='string'
+			console.log(str.substring(2,1))
+	</script>
+</html>

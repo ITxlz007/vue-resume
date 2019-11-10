@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// var arr = [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}];
+		// var arr =[1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN]
+		// console.log(arr.length)//没有去重之前的数组长度
+		
+		// 利用ES6 Set去重（ES6中最常用）
+		// function unique(arr){
+		// 	return Array.from(new Set(arr))
+		// }
+		// console.log(unique(arr).length)
+		// console.log(unique(arr))
+		
+		// 利用for嵌套for，然后splice去重（ES5中最常用）
+		// function unique(arr){
+		// 	for(var i=0; i<arr.length-1;i++){
+		// 		for(var j=i+1;j<arr.length;j++){
+		// 			if(arr[i]==arr[j]){
+		// 				arr.splice(j,1)
+		// 				j--
+		// 			}
+		// 		}
+		// 	}
+		// 	return arr
+		// }
+		// console.log(unique(arr))
+		
+		// [...new Set(arr)]
+		// var arr1 = [...new Set(arr)]
+		// console.log(arr1)
+		
+		// 利用includes方法
+		// var array = []
+		// for(var i=0;i<arr.length;i++){
+		// 	if(!array.includes(arr[i])){
+		// 		array.push(arr[i])
+		// 	}
+		// }
+		// function unique(arr){
+		// 	var array = [];
+		// 	for(var i=0;i<arr.length;i++){
+		// 		if(!array.includes(arr[i])){
+		// 			array.push(arr[i])
+		// 		}
+		// 	}
+		// 	return array
+		// }
+		// console.log(unique(arr))
+		
+		
+		//利用indexOf的方法去重
+		// var array =[];
+		// for(var i=0;i<arr.length;i++){
+		// 	// indexOf中找到索引对应的值,则返回索引中的值,否则的话返回的是-1
+		// 	if(array.indexOf(arr[i])==-1){
+		// 		array.push(arr[i])
+		// 	}
+		// }
+		// console.log(array)
+		
+		// 利用sort()方法进行去重
+		// var arr2 = ['a','c','d','a','d','f','k','z']
+		// var arr3 = []
+		// arr2.sort()
+		// for(var i=1;i<arr2.length;i++){
+		// 	if(arr2[i]!==arr2[i-1]){
+		// 		arr3.push(arr2[i])
+		// 	}
+		// }
+		// console.log(arr3)
+		
+		// var arr =[1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN]
+		var arr = [1,2,4,1,1,5,67,87,2,4,5,98]
+		// 利用ES6 Set去重（ES6中最常用）
+		var z = Array.from(new Set(arr))
+		console.log(z)
+		
+		// 利用for嵌套for，然后splice去重（ES5中最常用）
+		for(var i=0;i<arr.length;i++){
+			for(var j=i+1;j<arr.length;j++ ){
+				if(arr[i]==arr[j]){
+					arr.splice(j,1)
+					// j--
+				}
+			}
+		}
+		console.log(arr)
+		// 利用includes方法
+		
+		var array =[]
+		for(var i=0;i<arr.length;i++){
+			if(arr.includes(arr[i])){
+				array.push(arr[i])
+			}
+		}
+		console.log(array)
+		//利用indexOf的方法去重
+		var arr3= []
+		for(var i=0;i<arr.length;i++){
+			if(arr3.indexOf(arr[i])==-1){
+				arr3.push(arr[i])
+			}
+		}
+		console.log(arr3)
+		// 利用sort()方法进行去重
+
+		arr.sort()
+		var arr4=[arr[0]]
+		for(var i=1;i<arr.length;i++){
+			if(arr[i]!==arr[i-1]){
+				arr4.push(arr[i])
+			}
+		}
+		console.log(arr4)
+		
+		console.log(z)
+		
+	</script>
+</html>

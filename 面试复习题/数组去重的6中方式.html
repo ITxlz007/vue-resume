@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组去重的六种方法</title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		var arr =[1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN];
+		console.log(arr.length)
+		// 利用es6的属性紧急性去重
+		var z = Array.from(new Set(arr))
+		console.log(z)
+		// 利用inludes()方法去重
+		var array =[]
+		for(var i=0;i<arr.length;i++){
+			if(!array.includes(arr[i])){
+				array.push(arr[i])
+			}
+		}
+		
+		console.log(array)
+		// 利用sort()方法去重
+		var arr1 = [arr[0]];
+		arr.sort()
+		for(var i=1;i<arr.length;i++){
+			if(arr[i]!==arr[i-1]){
+				arr1.push(arr[i])
+			}
+		}
+		console.log(arr1)
+		// 利用indexof()方法去重
+		var arr2 = []
+		for (var i=0;i<arr.length;i++) {
+			if(arr2.indexOf(arr[i])==-1){
+				arr2.push(arr[i])
+			}
+		}
+		console.log(arr2)
+		// for+splice去重
+		for(var i=0;i<arr.length;i++){
+			for(var j=i+1;j<arr.length;j++ ){
+				if(arr[i]==arr[j]){
+					arr.splice(j,1)
+					// j--
+				}
+			}
+		}
+		console.log(arr)
+		// 利用[...new Set(arr)]
+		console.log([...new Set(arr)])
+	</script>
+	
+</html>

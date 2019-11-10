@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    li{
+    cursor: pointer;
+    }
+</style>
+<body>
+    <ul>
+        <li>我是第1</li>
+        <li>我是第2</li>
+        <li>我是第3</li>
+    </ul>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script>
+        $('li').click(function () {
+           var i =  $(this).index()
+           console.log(i)
+        })
+    </script>
+</body>
+</html>
